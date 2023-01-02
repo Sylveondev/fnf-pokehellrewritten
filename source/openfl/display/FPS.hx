@@ -1,5 +1,6 @@
 package openfl.display;
 
+import openfl.text.Font;
 import haxe.Timer;
 import openfl.events.Event;
 import openfl.text.TextField;
@@ -15,6 +16,7 @@ import openfl.Lib;
 
 #if openfl
 import openfl.system.System;
+import openfl.Lib;
 #end
 
 /**
@@ -25,6 +27,8 @@ import openfl.system.System;
 @:fileXml('tags="haxe,release"')
 @:noDebug
 #end
+
+
 class FPS extends TextField
 {
 	/**
@@ -36,6 +40,8 @@ class FPS extends TextField
 	@:noCompletion private var currentTime:Float;
 	@:noCompletion private var times:Array<Float>;
 
+	public var memPeak:Float = 0;
+
 	public function new(x:Float = 10, y:Float = 10, color:Int = 0x000000)
 	{
 		super();
@@ -44,12 +50,14 @@ class FPS extends TextField
 		this.y = y;
 
 		currentFPS = 0;
+		memPeak = 0;
 		selectable = false;
 		mouseEnabled = false;
-		defaultTextFormat = new TextFormat("_sans", 14, color);
+		defaultTextFormat = new TextFormat('Righteous', 24, color);
 		autoSize = LEFT;
 		multiline = true;
 		text = "FPS: ";
+		alpha = 0.5;
 
 		cacheCount = 0;
 		currentTime = 0;
@@ -87,13 +95,15 @@ class FPS extends TextField
 			
 			#if openfl
 			memoryMegas = Math.abs(FlxMath.roundDecimal(System.totalMemory / 1000000, 1));
-			text += "\nMemory: " + memoryMegas + " MB";
+			if (memoryMegas > memPeak) memPeak = memoryMegas;
+			//text += " - Memory: " + memoryMegas + " MB - Mem Peak: " + memPeak + #if debug " MB - Pokehell Dev Version" #else "MB - Pokehell "+MainMenuState.pokehellVersion #end;
 			#end
 
 			textColor = 0xFFFFFFFF;
 			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 2)
 			{
-				textColor = 0xFFFF0000;
+				textColor = 0xFFFF8585;
+				text += "\nThe game is lagging!";
 			}
 
 			#if (gl_stats && !disable_cffi && (!html5 || !canvas))
@@ -106,5 +116,49 @@ class FPS extends TextField
 		}
 
 		cacheCount = currentCount;
+	}
+}
+
+class EngVer extends TextField
+{
+	/**
+		The current frame rate, expressed using frames-per-second
+	**/
+	public var currentFPS(default, null):Int;
+
+	@:noCompletion private var cacheCount:Int;
+	@:noCompletion private var currentTime:Float;
+	@:noCompletion private var times:Array<Float>;
+
+	public var memPeak:Float = 0;
+
+	public function new(x:Float = 10, y:Float = 10, color:Int = 0x000000)
+	{
+		super();
+
+		this.x = x;
+		this.y = y;
+
+		currentFPS = 0;
+		memPeak = 0;
+		selectable = false;
+		mouseEnabled = false;
+		defaultTextFormat = new TextFormat('Righteous', 24, color);
+		autoSize = LEFT;
+		multiline = true;
+		text = "OS Engine "+MainMenuState.osEngineVersion;
+		alpha = 0.5;
+
+		cacheCount = 0;
+		currentTime = 0;
+		times = [];
+	}
+
+	// Event Handlers
+	@:noCompletion
+	private #if !flash override #end function __enterFrame(deltaTime:Float):Void
+	{
+		this.x = Lib.application.window.width - 180;
+		
 	}
 }

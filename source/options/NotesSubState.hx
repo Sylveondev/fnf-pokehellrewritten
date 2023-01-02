@@ -62,7 +62,7 @@ class NotesSubState extends MusicBeatSubstate
 		add(grpNumbers);
 
 		var resetText:FlxText = new FlxText(12, FlxG.height - 40, "Press CONTROL to reset selected arrow.", 80);
-		resetText.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, CENTER);
+		resetText.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.WHITE, CENTER);
 		add(resetText);
 
 		for (i in 0...ClientPrefs.arrowHSV.length) {
