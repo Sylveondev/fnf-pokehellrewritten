@@ -1,0 +1,23 @@
+{
+	"songs": [
+		["Smoking", "vaporeon", [118, 201, 223]],
+		["Chillin", "vaporeon", [118, 201, 223]],
+		["Addiction", "vaporeon", [118, 201, 223]]
+	],
+
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "stage",
+
+	"storyName": "In the allyway",
+	"weekBefore": "tutorial",
+	"weekName": "Week 1",
+	"startUnlocked": true,
+	"pokehellWeek": true,
+	"hideStoryMode": false,
+	"hideFreeplay": false,
+    "difficulties":"hard"
+}

@@ -181,6 +181,7 @@ class PlayState extends MusicBeatState
 	public var gfSpeed:Int = 1;
 	public var health:Float = 1;
 	public var combo:Int = 0;
+	public var highestcombo:Int = 0;
 
 	private var healthBarBG:AttachedSprite;
 	public var healthBarOverlay:FlxSprite;
@@ -301,6 +302,10 @@ class PlayState extends MusicBeatState
 	public var inCutscene:Bool = false;
 	public var skipCountdown:Bool = false;
 	var songLength:Float = 0;
+	var scoretable:FlxText;
+
+	var writerbg:FlxSprite;
+	var writertxt:FlxText;
 
 	public var boyfriendCameraOffset:Array<Float> = null;
 	public var opponentCameraOffset:Array<Float> = null;
@@ -530,6 +535,11 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			case 'ally': //Week 1: Vaporeon
+				var bg:BGSprite = new BGSprite('ally', -600, -200, 1, 1);
+				add(bg);
+
+
 			case 'stage': //Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -1089,6 +1099,23 @@ class PlayState extends MusicBeatState
 		  }
 	  	add(laneunderlay);
 
+		  scoretable = new FlxText(-100, FlxG.height / 2, 0,
+			'Song Score: '+ songScore +
+			'\nCurrent Combo: '+ combo +
+			'\nHighest combo: '+ highestcombo +
+			'\nPerfects: '+ perfects +
+			'\nSicks: '+ sicks +
+			'\nGoods: ' + goods +
+			'\nBads: ' + bads +
+			'\nShits: ' + shits +
+			'\nMisses: ' + songMisses
+		, 20);
+		scoretable.setFormat(Paths.font("vcr.ttf"), 20, 0xFFED9454, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoretable.scrollFactor.set();
+		scoretable.cameras = [camHUD];
+		scoretable.alpha = 0;
+		add(scoretable);
+
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
 		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -1103,6 +1130,56 @@ class PlayState extends MusicBeatState
 			timeTxt.text = SONG.song;
 		}
 		updateTime = showTime;
+
+		writertxt = new FlxText(-1000, FlxG.width * 0.25, 400, "", 32);
+		writertxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.BLACK, LEFT);
+		writertxt.scrollFactor.set();
+		
+		var foundFile:Bool = false;
+		var fileName:String = #if MODS_ALLOWED Paths.modFolders('data/' + SONG.song.toLowerCase().replace(' ', '-') + '/artist.txt'); #else ''; #end
+		#if sys
+		trace(fileName);
+		if(FileSystem.exists(fileName)) {
+			foundFile = true;
+			trace('artist found');
+		}else{
+			trace('Artist not found in mods folder.');
+		}
+		#end
+
+		var curWriter:String;
+		var artist:Array<String>;
+		
+		if(!foundFile) {
+			fileName = Paths.txt(Paths.formatToSongPath(SONG.song) + '/' + 'artist');
+			trace(fileName);
+			#if sys
+			if(FileSystem.exists(fileName)) {
+			#else
+			if(OpenFlAssets.exists(fileName)) {
+			#end
+				foundFile = true;
+				trace('artist found');
+			}
+		}
+		if (foundFile == true) {
+			artist = CoolUtil.coolTextFile(fileName);
+			writertxt.text = artist.join('\n');
+		}else{
+			trace('No artists found');
+			writertxt.text = "Artist unknown";
+		}
+
+		writerbg = new FlxSprite(-100, scoretable.y - writertxt.height - 4).makeGraphic(Std.int(writertxt.width + 2), Std.int(writertxt.height + 2), FlxColor.WHITE);
+		writertxt.y = writerbg.y+1;
+
+		writertxt.cameras = [camOther];
+		writerbg.cameras = [camOther];
+		writertxt.alpha = 0;
+		writerbg.alpha = 0;
+
+		add(writerbg);
+		add(writertxt);
 
 		timeBarBG = new AttachedSprite('timeBar');
 		timeBarBG.x = timeTxt.x;
@@ -2565,6 +2642,11 @@ class PlayState extends MusicBeatState
 				});
 		}
 
+		FlxTween.tween(scoretable, {alpha: 1, x: 4}, 1, {ease: FlxEase.backOut});
+		FlxTween.tween(writertxt, {alpha: 1}, 1, {ease: FlxEase.circOut,startDelay:0.5});
+		FlxTween.tween(writertxt, {x: 4}, 1, {ease: FlxEase.backOut});
+		FlxTween.tween(writerbg, {alpha: 1, x: 0}, 1, {ease: FlxEase.backOut});
+
 		#if desktop
 		// Updating Discord Rich Presence (with Time Left)
 		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength);
@@ -3221,6 +3303,16 @@ class PlayState extends MusicBeatState
 			botplaySine += 180 * elapsed;
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
 		}
+
+		scoretable.text = 'Song Score: '+ songScore +
+		'\nCurrent Combo: '+ combo +
+		'\nHighest combo: '+ highestcombo +
+		'\nPerfects: '+ perfects +
+		'\nSicks: '+ sicks +
+		'\nGoods: ' + goods +
+		'\nBads: ' + bads +
+		'\nShits: ' + shits +
+		'\nMisses: ' + songMisses;
 
 		if (controls.PAUSE && startedCountdown && canPause)
 		{
@@ -4961,6 +5053,7 @@ class PlayState extends MusicBeatState
 			{
 				combo += 1;
 				if(combo > 9999) combo = 9999;
+				if (combo > highestcombo) highestcombo = combo;
 				popUpScore(note);
 				health += note.hitHealth * healthGain;
 			}
@@ -5337,6 +5430,12 @@ class PlayState extends MusicBeatState
 
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();
+
+		//Hide the song artist thing now
+		if (curBeat >= 10 && curBeat % 4 == 0){
+			FlxTween.tween(writertxt, {alpha: 0, x: -1000}, .5, {ease: FlxEase.backIn});
+			FlxTween.tween(writerbg, {alpha: 0, x: -1000}, .5, {ease: FlxEase.backIn});
+		}
 
 		if (gf != null && curBeat % Math.round(gfSpeed * gf.danceEveryNumBeats) == 0 && gf.animation.curAnim != null && !gf.animation.curAnim.name.startsWith("sing") && !gf.stunned)
 		{

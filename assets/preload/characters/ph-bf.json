@@ -1,78 +1,89 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
-				0,
+				10,
 				0
 			],
-			"loop": false,
-			"fps": 12,
 			"anim": "idle",
-			"indices": [],
-			"name": "pokeHell BF idle"
+			"fps": 24,
+			"name": "hellbf idle",
+			"indices": []
 		},
 		{
-			"offsets": [
-				0,
-				0
-			],
 			"loop": false,
-			"fps": 12,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "pokeHell BF left"
-		},
-		{
 			"offsets": [
-				0,
-				0
+				12,
+				1
 			],
-			"loop": false,
-			"fps": 12,
-			"anim": "singRIGHT",
-			"indices": [],
-			"name": "pokeHell BF right"
-		},
-		{
-			"offsets": [
-				0,
-				0
-			],
-			"loop": false,
-			"fps": 12,
 			"anim": "singUP",
-			"indices": [],
-			"name": "pokeHell BF up"
+			"fps": 24,
+			"name": "hellbf up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				29,
+				-1
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "hellbf down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				-2
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "hellbf right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				29,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "hellbf left",
+			"indices": []
 		},
 		{
 			"offsets": [
 				0,
 				0
 			],
-			"loop": false,
-			"fps": 12,
-			"anim": "singDOWN",
 			"indices": [],
-			"name": "pokeHell BF down"
+			"fps": 24,
+			"anim": "hey",
+			"loop": true,
+			"name": "hellbf bitch"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/pokeHell BF",
+	"image": "characters/hellbf",
 	"position": [
-		-120,
-		100
+		-220,
+		90
 	],
 	"healthicon": "bf",
 	"flip_x": true,
 	"healthbar_colors": [
-		49,
-		176,
-		209
+		68,
+		158,
+		255
 	],
 	"camera_position": [
-		-240,
-		240
+		-210,
+		120
 	],
 	"sing_duration": 4,
-	"scale": 0.5
+	"scale": 0.8
 }
