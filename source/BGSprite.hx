@@ -11,6 +11,7 @@ class BGSprite extends FlxSprite
 
 		if (animArray != null) {
 			frames = Paths.getSparrowAtlas(image);
+			if (frames == null) trace(image+': Failed to load!');
 			for (i in 0...animArray.length) {
 				var anim:String = animArray[i];
 				animation.addByPrefix(anim, anim, 24, loop);
