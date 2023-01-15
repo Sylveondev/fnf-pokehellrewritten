@@ -62,5 +62,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: pokehell-windows-${{ steps.build.outputs.sha_short }}
-          path: export/release/windows/bin
+          path: export/debug/windows/bin
           
