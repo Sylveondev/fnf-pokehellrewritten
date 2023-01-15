@@ -43,7 +43,7 @@ jobs:
           haxelib install flixel-addons 2.11.0
           haxelib install tjson
           haxelib install hxjsonast
-          haxelib git linc_luajit https://rudenkoArts/linc_luajit
+          haxelib git linc_luajit https://github.com/rudenkoArts/linc_luajit
           haxelib install hscript
           haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
@@ -55,7 +55,7 @@ jobs:
       - name: Compile
         id: build
         run: |
-          haxelib run lime build Project.xml windows --app-version="4.0.0-${{ github.run_id}}"
+          haxelib run lime build Project.xml windows -debug --app-version="4.0.0-${{ github.run_id}}"
           echo "::set-output name=sha_short::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           echo Build for echo ${{ steps.build.outputs.sha_short }} completed.
       - name: Publish Artifact
