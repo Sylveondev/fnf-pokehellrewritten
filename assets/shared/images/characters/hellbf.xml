@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="hellbf.png">
-<SubTexture name="hellbf idle0000" x="2141" y="664" width="530" height="661" frameX="-381" frameY="-48" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf idle0001" x="564" y="1406" width="531" height="670" frameX="-393" frameY="-40" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf idle0002" x="1092" y="0" width="523" height="695" frameX="-406" frameY="-16" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf up0000" x="0" y="0" width="556" height="711" frameX="-389" frameY="0" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf up0001" x="556" y="0" width="536" height="703" frameX="-400" frameY="-8" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf down0000" x="2693" y="0" width="558" height="626" frameX="-366" frameY="-88" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf down0001" x="2141" y="0" width="552" height="664" frameX="-372" frameY="-48" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf right0000" x="1095" y="1406" width="578" height="666" frameX="-402" frameY="-41" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf right0001" x="0" y="1406" width="564" height="673" frameX="-380" frameY="-33" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf left0000" x="1615" y="679" width="510" height="674" frameX="-330" frameY="-44" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf left0001" x="1615" y="0" width="526" height="679" frameX="-341" frameY="-37" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf bitch0000" x="0" y="711" width="557" height="695" frameX="-372" frameY="-16" frameWidth="1280" frameHeight="720" />
-<SubTexture name="hellbf bitch0001" x="557" y="711" width="557" height="695" frameX="-372" frameY="-16" frameWidth="1280" frameHeight="720" />
+<SubTexture name="hellbf idle0000" x="2141" y="664" width="530" height="661"/>
+<SubTexture name="hellbf idle0001" x="564" y="1406" width="531" height="670"/>
+<SubTexture name="hellbf idle0002" x="1092" y="0" width="523" height="695"/>
+<SubTexture name="hellbf up0000" x="0" y="0" width="556" height="711" />
+<SubTexture name="hellbf up0001" x="556" y="0" width="536" height="703" />
+<SubTexture name="hellbf down0000" x="2693" y="0" width="558" height="626" />
+<SubTexture name="hellbf down0001" x="2141" y="0" width="552" height="664" />
+<SubTexture name="hellbf right0000" x="1095" y="1406" width="578" height="666" />
+<SubTexture name="hellbf right0001" x="0" y="1406" width="564" height="673" />
+<SubTexture name="hellbf left0000" x="1615" y="679" width="510" height="674" />
+<SubTexture name="hellbf left0001" x="1615" y="0" width="526" height="679" />
+<SubTexture name="hellbf bitch0000" x="0" y="711" width="557" height="695" />
+<SubTexture name="hellbf bitch0001" x="557" y="711" width="557" height="695" />
 </TextureAtlas>
