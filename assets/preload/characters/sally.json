@@ -1,20 +1,108 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
-				-5,
+				0,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "idle"
+			"fps": 24,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "scared",
+			"fps": 24,
+			"name": "scared",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "dieStart",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "dieLoop",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "dieEnd",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "mup",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "mdown",
+			"indices": []
 		},
 		{
 			"offsets": [
-				-39,
-				8
+				0,
+				0
 			],
 			"loop": false,
 			"fps": 24,
@@ -23,143 +111,55 @@
 			"name": "hey"
 		},
 		{
-			"offsets": [
-				16,
-				-35
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				0,
+				0
+			],
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "left0"
+			"fps": 24,
+			"name": "left",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-20,
-				-82
-			],
 			"loop": false,
-			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "down0"
-		},
-		{
 			"offsets": [
-				15,
-				20
+				0,
+				0
 			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "up0"
-		},
-		{
-			"offsets": [
-				-22,
-				-8
-			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "right0"
+			"fps": 24,
+			"name": "right",
+			"indices": []
 		},
 		{
-			"offsets": [
-				17,
-				-35
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				0,
+				0
+			],
 			"anim": "singLEFTmiss",
-			"indices": [],
-			"name": "leftMiss"
+			"fps": 24,
+			"name": "mleft",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-22,
-				-9
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				0,
+				0
+			],
 			"anim": "singRIGHTmiss",
-			"indices": [],
-			"name": "rightMiss"
-		},
-		{
-			"offsets": [
-				17,
-				20
-			],
-			"loop": false,
 			"fps": 24,
-			"anim": "singUPmiss",
-			"indices": [],
-			"name": "upMiss"
-		},
-		{
-			"offsets": [
-				-21,
-				-82
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singDOWNmiss",
-			"indices": [],
-			"name": "downMiss"
-		},
-		{
-			"offsets": [
-				-31,
-				-97
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "scared",
-			"indices": [],
-			"name": "scared"
-		},
-		{
-			"loop": false,
-			"offsets": [
-				45,
-				2
-			],
-			"anim": "firstDeath",
-			"fps": 24,
-			"name": "dies",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-39,
-				8
-			],
-			"anim": "deathConfirm",
-			"fps": 24,
-			"name": "deadConfirm",
-			"indices": []
-		},
-		{
-			"loop": true,
-			"offsets": [
-				50,
-				-108
-			],
-			"anim": "deathLoop",
-			"fps": 24,
-			"name": "deadLoop",
+			"name": "mright",
 			"indices": []
 		}
 	],
-	"no_antialiasing": false,
-	"image": "characters/sally",
+	"no_antialiasing": true,
+	"image": "characters/SallySmall",
 	"position": [
-		0,
-		400
+		-120,
+		150
 	],
 	"healthicon": "sally",
 	"flip_x": true,
@@ -169,9 +169,9 @@
 		92
 	],
 	"camera_position": [
-		0,
-		100
+		100,
+		50
 	],
 	"sing_duration": 4,
-	"scale": 1.1
+	"scale": 0.999999999999999
 }
