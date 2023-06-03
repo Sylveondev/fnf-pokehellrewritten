@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-28,
+				50
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Up0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Down0",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-29,
+				50
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Up0"
+		},
+		{
+			"offsets": [
+				-29,
+				50
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Up0"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/epicflareon",
+	"position": [
+		100,
+		230
+	],
+	"healthicon": "epicflareon",
+	"flip_x": false,
+	"healthbar_colors": [
+		1,
+		0,
+		1
+	],
+	"camera_position": [
+		-125,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 0.85
+}

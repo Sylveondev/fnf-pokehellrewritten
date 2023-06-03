@@ -1,0 +1,23 @@
+{
+	"songs": [
+		["Forged", "sally", [118, 201, 223]],
+		["Epic-freeplay-song", "epicflareon", [118, 201, 223]],
+		["Smoked-out", "vaporeon", [118, 201, 223]]
+	],
+
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "stage",
+
+	"storyName": "Bonus song",
+	"weekBefore": "tutorial",
+	"weekName": "Bonus",
+	"startUnlocked": true,
+	"pokehellWeek": true,
+	"hideStoryMode": true,
+	"hideFreeplay": false,
+    "difficulties":"hard"
+}
