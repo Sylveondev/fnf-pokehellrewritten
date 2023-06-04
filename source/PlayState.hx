@@ -21,6 +21,7 @@ import flixel.addons.effects.FlxTrailArea;
 import flixel.addons.effects.chainable.FlxEffectSprite;
 import flixel.addons.effects.chainable.FlxWaveEffect;
 import flixel.addons.transition.FlxTransitionableState;
+import flixel.addons.display.FlxBackdrop;
 import flixel.graphics.atlas.FlxAtlas;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
@@ -555,7 +556,22 @@ class PlayState extends MusicBeatState
 				var shadow:BGSprite = new BGSprite('Shadow', 1450, 1275, 1, 1);
 				bg.scale.set(1.3, 0.2);
 				add(shadow);*/
-
+			case 'forged':
+				var bg:BGSprite = new BGSprite('forgedBG', -600, -200, 1, 1);
+				add(bg);
+				
+				if (!ClientPrefs.lowQuality){
+					#if (flixel_addons < "3.0.0")
+					var road = new FlxBackdrop(Paths.image('forgedNumbers'), 0, 0, true, true);
+					#else
+					var road = new FlxBackdrop(Paths.image('forgedNumbers'), XY);
+					#end
+					road.velocity.set(0, 50);
+					road.updateHitbox();
+					road.scrollFactor.set(0.2, 0.2);
+					road.antialiasing = ClientPrefs.globalAntialiasing;
+					add(road);
+				}
 			case 'stage': //Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
