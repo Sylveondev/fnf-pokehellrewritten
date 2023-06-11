@@ -257,6 +257,14 @@ class PlayState extends MusicBeatState
 	var grpLimoParticles:FlxTypedGroup<BGSprite>;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
 	var fastCar:BGSprite;
+
+	var trippyBG:BGSprite;
+	var boxBG:BGSprite;
+	var squad:BGSprite;
+
+	var road:FlxBackdrop;
+	var mountains:FlxBackdrop;
+	var trees:FlxBackdrop;
 	
 	var trailunderdad:FlxTrail;
 	var trailunderbf:FlxTrail;
@@ -565,9 +573,9 @@ class PlayState extends MusicBeatState
 				
 				if (!ClientPrefs.lowQuality){
 					#if (flixel_addons < "3.0.0")
-					var road = new FlxBackdrop(Paths.image('forgedNumbers'), 0, 0, true, true);
+					road = new FlxBackdrop(Paths.image('forgedNumbers'), 0, 0, true, true);
 					#else
-					var road = new FlxBackdrop(Paths.image('forgedNumbers'), XY);
+					road = new FlxBackdrop(Paths.image('forgedNumbers'), XY);
 					#end
 					road.velocity.set(0, 50);
 					road.updateHitbox();
@@ -575,6 +583,11 @@ class PlayState extends MusicBeatState
 					road.antialiasing = ClientPrefs.globalAntialiasing;
 					add(road);
 				}
+
+			case 'sytrus': //Secret Week 1: Denis
+				trippyBG = new BGSprite('SytrusStage', -100, -50, 0, 0, ['animated']);
+				add(trippyBG);
+
 			case 'stage': //Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -1058,6 +1071,13 @@ class PlayState extends MusicBeatState
 		startCharacterPos(boyfriend);
 		boyfriendGroup.add(boyfriend);
 		startCharacterLua(boyfriend.curCharacter);
+
+		if (SONG.song.toLowerCase() == 'sytrus'){
+			dad.alpha = 0;
+			boyfriend.visible = false;
+			gf.visible = false;
+			camHUD.visible = false;
+		}
 
 		var camPos:FlxPoint = new FlxPoint(girlfriendCameraOffset[0], girlfriendCameraOffset[1]);
 		if(gf != null)
@@ -1573,9 +1593,30 @@ class PlayState extends MusicBeatState
 			}
 			seenCutscene = true;
 		}
-		else
-		{
-			startCountdown();
+		else {
+			var daSong:String = Paths.formatToSongPath(curSong);
+			switch(daSong){
+				case 'sytrus':
+					new FlxTimer().start(0.25, function(tmr:FlxTimer)
+						{
+							trippyBG.animation.play('animated',true);
+
+							camHUD.visible = false;
+							dad.alpha = 0;
+							boyfriend.alpha = 0;
+							gf.alpha = 0;
+							new FlxTimer().start(2.5, function(tmr:FlxTimer)
+								{
+									camHUD.visible = true;
+									FlxTween.tween(dad, {alpha: 1}, 1.5, {
+										ease: FlxEase.linear
+									});
+									startCountdown();
+								});
+						});
+				default:
+					startCountdown();
+			}
 		}
 		RecalculateRating();
 
