@@ -87,8 +87,28 @@ class CreditsState extends MusicBeatState
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 		['Pokehell Dev Team'],
-		['SylveonDev',		'sylveondev',		'Director.',					'https://twitter.com/sylveondev',	'0xFFFF9EFD'],
-		['Floombo',		'floombo',		'Co-director.',					'https://twitter.com/floombobw',	'0xFF93ED6F'],
+		['SylveonDev',		'sylveondev',		'Director.',					'',	'0xFFAAAAAA'],
+		['Floombo',		'floombo',		'Also Director.',					'',	'0xFFAAAAAA'],
+		['Alex Le\'Volt Halt',		'alex',		'Composer/Charter.',					'',	'0xFFAAAAAA'],
+		['Duncan',		'duncan',		'Composer.',					'',	'0xFFAAAAAA'],
+		['Rex_',		'rex',		'Composer.',					'',	'0xFFAAAAAA'],
+		['It\'s Loq',		'loq',		'Composer.',					'',	'0xFFAAAAAA'],
+		['NayuKhrome',		'nayu',		'Composer.',					'',	'0xFFAAAAAA'],
+		['Phantasma',		'phantasma',		'Composer.',					'',	'0xFFAAAAAA'],
+		['Wrath!',		'wrath',		'Composer.',					'',	'0xFFAAAAAA'],
+		['Blaze',		'blaze',		'Charter.',					'',	'0xFFAAAAAA'],
+		['Superfoxi543',		'superfoxi',		'Charter.',					'',	'0xFFAAAAAA'],
+		['DerpManZero',		'derpy',		'Artist.',					'',	'0xFFAAAAAA'],
+		['Leafy the Foliage',		'foliage',		'Artist.',					'',	'0xFFAAAAAA'],
+		['Infry',		'infry',		'Artist.',					'',	'0xFFAAAAAA'],
+		['Pixeled Basket',		'pixelbasket',		'Artist.',					'',	'0xFFAAAAAA'],
+		['InDataFry',		'data',		'Coder.',					'',	'0xFFAAAAAA'],
+		['Memehoovy',		'memehoovy',		'Coder.',					'',	'0xFFAAAAAA'],
+		['FlareySFM',		'flarey',		'Chromatics.',					'',	'0xFFAAAAAA'],
+		['DeputyJanitor',		'deputy',		'Special guest.',					'',	'0xFFAAAAAA'],
+		['DiscoZombieAydin',		'disco',		'Special guest.',					'',	'0xFFAAAAAA'],
+		['HassenX',		'hassenx',		'Special guest.',					'',	'0xFFAAAAAA'],
+		['Derpy_Jacob_903',		'derpyhangbob',		'Special guest.',					'',	'0xFFAAAAAA'],
 		[''],
 		
 			['OS Engine Team'],
@@ -221,9 +241,7 @@ class CreditsState extends MusicBeatState
 				}
 			}
 
-			if(controls.ACCEPT && (creditsStuff[curSelected][3] == null || creditsStuff[curSelected][3].length > 4)) {
-				CoolUtil.browserLoad(creditsStuff[curSelected][3]);
-			}
+			
 			if (controls.BACK)
 			{
 				if(colorTween != null) {
