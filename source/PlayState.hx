@@ -551,22 +551,22 @@ class PlayState extends MusicBeatState
 				var bg:BGSprite = new BGSprite('ally', -600, -200, 1, 1);
 				add(bg);
 
-			/*case 'stage2': //Week 2: Jolteon
-				var bg:BGSprite = new BGSprite('NightStage', 0, 0, 1, 1, ['idle'], true);
-				bg.scale.set(2,2);
+			case 'stage2': //Week 2: Jolteon
+				var bg:BGSprite = new BGSprite('NightStage', 1200, 800, 1, 1, ['idle'], true);
+				bg.scale.set(2.5,2.5);
 				add(bg);
 
 				var shadow:BGSprite = new BGSprite('Shadow', 1070, 1330, 1, 1);
-				bg.scale.set(0.8,0.2);
+				shadow.scale.set(0.8,0.2);
 				add(shadow);
 
 				var shadow:BGSprite = new BGSprite('Shadow', 2200, 1330, 1, 1);
-				bg.scale.set(0.8,0.2);
+				shadow.scale.set(0.8,0.2);
 				add(shadow);
 
 				var shadow:BGSprite = new BGSprite('Shadow', 1450, 1275, 1, 1);
-				bg.scale.set(1.3, 0.2);
-				add(shadow);*/
+				shadow.scale.set(1.3, 0.2);
+				add(shadow);
 			case 'forged':
 				var bg:BGSprite = new BGSprite('forgedBG', -600, -200, 1, 1);
 				add(bg);

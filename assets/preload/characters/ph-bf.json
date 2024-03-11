@@ -1,70 +1,114 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				10,
 				0
 			],
-			"anim": "idle",
+			"indices": [],
 			"fps": 24,
-			"name": "hellbf idle",
-			"indices": []
+			"anim": "idle",
+			"loop": false,
+			"name": "Idle0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				12,
 				1
 			],
-			"anim": "singUP",
+			"indices": [],
 			"fps": 24,
-			"name": "hellbf up",
-			"indices": []
+			"anim": "singUP",
+			"loop": false,
+			"name": "Up0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				29,
 				-1
 			],
-			"anim": "singDOWN",
+			"indices": [],
 			"fps": 24,
-			"name": "hellbf down",
-			"indices": []
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "Down0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				10,
 				-2
 			],
-			"anim": "singRIGHT",
+			"indices": [],
 			"fps": 24,
-			"name": "hellbf right",
-			"indices": []
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Right0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				29,
 				0
 			],
-			"anim": "singLEFT",
+			"indices": [],
 			"fps": 24,
-			"name": "hellbf left",
-			"indices": []
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Left0"
 		},
 		{
 			"offsets": [
-				0,
+				10,
 				0
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "hey",
 			"loop": true,
-			"name": "hellbf bitch"
+			"name": "Hey"
+		},
+		{
+			"offsets": [
+				12,
+				1
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"loop": false,
+			"name": "UpMiss0"
+		},
+		{
+			"offsets": [
+				29,
+				-1
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"loop": false,
+			"name": "DownMiss0"
+		},
+		{
+			"offsets": [
+				29,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "LeftMiss0"
+		},
+		{
+			"offsets": [
+				10,
+				-2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "RightMiss0"
 		}
 	],
 	"no_antialiasing": false,
@@ -81,9 +125,9 @@
 		255
 	],
 	"camera_position": [
-		-210,
+		-140,
 		120
 	],
 	"sing_duration": 4,
-	"scale": 0.8
+	"scale": 0.7
 }
