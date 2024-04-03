@@ -1,47 +1,6 @@
-{
-	"song": {
-		"speed": 3.8,
-		"stage": "stage2",
-		"player1": "sally",
-		"player2": "jolteon",
-		"healthdrain": 0,
-		"events": [],
-		"notes": [
-			{
-				"gfSection": false,
-				"altAnim": false,
-				"typeOfSection": 0,
-				"sectionNotes": [],
-				"bpm": 150,
-				"sectionBeats": 4,
-				"changeBPM": false,
-				"mustHitSection": true
-			},
-			{
-				"gfSection": false,
-				"altAnim": false,
-				"typeOfSection": 0,
-				"sectionNotes": [],
-				"bpm": 150,
-				"sectionBeats": 4,
-				"changeBPM": false,
-				"mustHitSection": true
-			}
-		],
-		"splashSkin": "noteSplashes",
-		"characterTrails": false,
-		"validScore": false,
-		"bfTrails": false,
-		"gfVersion": "gf",
-		"bpm": 270,
-		"arrowSkin": "",
-		"needsVoices": true,
-		"healthdrainKill": false,
-		"swapStrumLines": false,
-		"cameraMoveOnNotes": false,
-		"song": "Metal",
-		"songInstVolume": 1,
-		"disableAntiMash": false,
-		"disableDebugButtons": false
-	}
-}
+--2024-04-03 19:30:39--  https://cdn.discordapp.com/attachments/1117948945528791201/1225220527287697468/metal-hard.json?ex=66205689
+Resolving cdn.discordapp.com (cdn.discordapp.com)... 162.159.135.233, 162.159.134.233, 162.159.130.233, ...
+Connecting to cdn.discordapp.com (cdn.discordapp.com)|162.159.135.233|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-04-03 19:30:39 ERROR 404: Not Found.
+
